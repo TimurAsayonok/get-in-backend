@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import morgan from 'morgan'
 import router from './router'
+import bodyParser from 'body-parser'
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/getIn');
@@ -11,6 +12,8 @@ const app = express();
 
 // Logger that outputs all requests into the console
 app.use(morgan('combined'));
+
+app.use(bodyParser.json())
 
 // Use v1 as prefix for all API endpoints
 app.use('/v1', router);

@@ -5,7 +5,7 @@ import { getAreas } from './controllers/areas'
 import { getEducations } from './controllers/educations'
 import { getMetroStations } from './controllers/metroStations'
 import { getOffers } from './controllers/offers'
-import { getUsers } from './controllers/users'
+import { getUsers, loginUser } from './controllers/users'
 
 const router = Router();
 
@@ -21,7 +21,11 @@ router.route('/metro_stations')
 router.route('/offers')
   .get(getOffers);
 
+/** users methods */
 router.route('/users')
   .get(getUsers);
+
+router.route('/login')
+  .post(loginUser);
 
 export default router;
