@@ -1,11 +1,11 @@
-import express, { Router } from 'express'
+import express, { Router } from 'express';
 
 // Import actions from areas controller
-import { getAreas } from './controllers/areas'
-import { getEducations } from './controllers/educations'
-import { getMetroStations } from './controllers/metroStations'
-import { getOffers } from './controllers/offers'
-import { getUsers, loginUser } from './controllers/users'
+import { getAreas } from './controllers/areas';
+import { getEducations } from './controllers/educations';
+import { getMetroStations } from './controllers/metroStations';
+import { getOffers } from './controllers/offers';
+import { getUsers, loginUser, getFavoriteOffers } from './controllers/users';
 
 const router = Router();
 
@@ -27,5 +27,8 @@ router.route('/users')
 
 router.route('/login')
   .post(loginUser);
+
+router.route('/user/:user_id/favorite_offers')
+  .get(getFavoriteOffers);
 
 export default router;

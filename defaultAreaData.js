@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import Area from './models/area'
+import mongoose from 'mongoose';
+import Area from './models/area';
 
 const areas = [
   // {
