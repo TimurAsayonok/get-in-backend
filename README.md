@@ -1,6 +1,8 @@
-# GetInBackend
-GetInBackend is the server part for the mobile application GetIn.
+# GetInBackend :computer:
+
+GetInBackend is the server part for the mobile application [GetIn](https://github.com/TimurAsayonok/GetInMobileApp) - GetIn.
 At the moment, the basic methods are implemented.
+
 **For the user**:
 * login
 ```
@@ -48,3 +50,8 @@ GET /v1/educations
 ```
 GET /v1/metro_stations
 ```
+## Getting Started
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
