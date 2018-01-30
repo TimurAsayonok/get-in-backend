@@ -3,16 +3,17 @@ import nodemailer from 'nodemailer'
 import _ from 'lodash';
 
 import User from '../models/user';
+import Offer from '../models/offer';
 
+// Find all areas and return json response
 export const getUsers = (req, res, next) => {
-  // Find all areas and return json response
   User.find().lean().exec((err, users) => res.json(
     { users}
   ));
 }
 
+/** Login to app Method */
 export const loginUser = (req, res, next) => {
-  // Login method
   const userEmail = req.body.email;
   const userPassword = req.body.password;
 
@@ -26,9 +27,10 @@ export const loginUser = (req, res, next) => {
     }
 
     return res.status(200).json({ status: 200, payload: user });
-  })
+  });
 }
 
+/** Remind Password Method. Will send user password for app into email account */
 export const remindPassword = (req, res, next) => {
   const userEmail = req.body.user_email;
 
@@ -66,6 +68,7 @@ export const remindPassword = (req, res, next) => {
   });
 }
 
+/** Registration new user */
 export const singUpUser = (req, res, next) => {
   const userEmail = req.body.email;
   const password = req.body.password;
@@ -95,9 +98,10 @@ export const singUpUser = (req, res, next) => {
         return res.status(200).json({ status: 200, payload: user });
       });
     }
-  })
+  });
 }
 
+/** Get all user's favorite offers by userId */
 export const getFavoriteOffers = (req, res, next) => {
   const userId = req.params.user_id;
 
@@ -111,5 +115,66 @@ export const getFavoriteOffers = (req, res, next) => {
     }
 
     return res.status(200).json({ status: 200, payload: user.favorite_offers });
+  });
+}
+
+/** Add new favorite offer for user by offerId */
+export const addFavoriteOffer = (req, res, next) => {
+  const userId = req.params.user_id;
+  const offerId = req.body.offerId;
+
+  User.findById(userId, (err, user) => {
+    if (err) {
+      return res.status(500).json({ status: 500, message: "Something went wrong" });
+    }
+
+    if (!user) {
+      return res.status(404).json({ status: 404, message: "User not found" });
+    }
+
+    Offer.findById(offerId, (err, offer) => {
+      if (err) {
+        return res.status(500).json({ status: 500, message: "Something went wrong" });
+      }
+
+      if (!offer) {
+        return res.status(404).json({ status: 404, message: "Offer not found" });
+      }
+      user.favorite_offers.push(offer);
+
+      user.save((err, user) => {
+        if (err) {
+          return res.status(500).json({ status: 500, message: err});
+        }
+        return res.status(200).json({ status: 200, payload: user.favorite_offers});
+      });
+    });
+  })
+}
+
+/** Remove user's favorite offer by offerId */
+export const removeFavoriteOffer = (req, res, next) => {
+  const userId = req.params.user_id;
+  const offerId = req.body.offerId;
+
+  User.findById(userId, (err, user) => {
+    if (err) {
+      return res.status(500).json({ status: 500, message: "Something went wrong" });
+    }
+
+    if (!user) {
+      return res.status(404).json({ status: 404, message: "User not found" });
+    }
+
+    const newOffers = _.remove(user.favorite_offers, (offer) => offer._is === offerId);
+
+    user.favorite_offers = newOffers;
+
+    user.save((err, user) => {
+      if (err) {
+        return res.status(500).json({ status: 500, message: "Remove offer. Something went wrong" });
+      }
+      return res.status(200).json({ status: 200, offerId });
+    });
   })
 }

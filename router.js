@@ -5,7 +5,15 @@ import { getAreas } from './controllers/areas';
 import { getEducations } from './controllers/educations';
 import { getMetroStations } from './controllers/metroStations';
 import { getOffers } from './controllers/offers';
-import { getUsers, loginUser, getFavoriteOffers, remindPassword, singUpUser } from './controllers/users';
+import {
+  getUsers,
+  loginUser,
+  getFavoriteOffers,
+  remindPassword,
+  singUpUser,
+  addFavoriteOffer,
+  removeFavoriteOffer
+} from './controllers/users';
 
 const router = Router();
 
@@ -36,5 +44,9 @@ router.route('/singup')
 
 router.route('/user/:user_id/favorite_offers')
   .get(getFavoriteOffers);
+
+router.route('/user/:user_id/add_favorite_offer/')
+  .put(addFavoriteOffer)
+  .delete(removeFavoriteOffer);
 
 export default router;
