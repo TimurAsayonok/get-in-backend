@@ -4,7 +4,7 @@ import express, { Router } from 'express';
 import { getAreas } from './controllers/areas';
 import { getEducations } from './controllers/educations';
 import { getMetroStations } from './controllers/metroStations';
-import { getOffers } from './controllers/offers';
+import { getOffers, findOffers } from './controllers/offers';
 import {
   getUsers,
   loginUser,
@@ -26,8 +26,11 @@ router.route('/educations')
 router.route('/metro_stations')
   .get(getMetroStations);
 
+/** offer's methods */
 router.route('/offers')
   .get(getOffers);
+router.route('/find_offers')
+  .post(findOffers);
 
 /** user's methods */
 router.route('/users')
