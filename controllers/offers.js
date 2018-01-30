@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import Offer from '../models/offer';
+import _ from 'lodash';
 
 export const getOffers = (req, res, next) => {
   // Find all areas and return json response
@@ -32,8 +33,6 @@ export const findOffers = (req, res, next) => {
   const price = req.body.price;
   const roomNumbers = req.body.roomNumbers;
 
-  console.log(location);
-
   if (location.lng && location.lat) {
     location = findMaxMinLatLng(location);
 
@@ -43,6 +42,14 @@ export const findOffers = (req, res, next) => {
       .where("price").gte(price.from).lte(price.to)
       .where("rooms").equals(roomNumbers)
       .exec((err, offers) => {
+        if (err) {
+          return res.status(500).json({ status: 500, message: "Find offers. Something went wrong" });
+        }
+
+        if (_.isEmpty(offers)) {
+          return res.status(404).json({status: 404, message: "Empty result."})
+        }
+
         return res.status(200).json({ status: 200, payload: offers});
       });
   } else {
@@ -54,6 +61,11 @@ export const findOffers = (req, res, next) => {
         if (err) {
           return res.status(500).json({ status: 500, message: "Find offers. Something went wrong" });
         }
+
+        if (_.isEmpty(offers)) {
+          return res.status(404).json({ status: 404, message: "Empty result." })
+        }
+
         return res.status(200).json({ status: 200, payload: offers });
       });
   }
