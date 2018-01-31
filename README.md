@@ -22,11 +22,11 @@ GET /v1/:user_id/favorite_offers
 ```
 * adding / removing favorite offers in the list by user Id
 ```
-PUT /v1/user/:user_id/add_favorite_offer/
+PUT/DELETE /v1/user/:user_id/add_favorite_offer/
 ```
 * receiving user data by user Id
 ```
-PUT/DELETE /v1/user/:user_id
+GET /v1/user/:user_id
 ```
 **For offers:**
 * search offers on the given parameters
@@ -51,7 +51,20 @@ GET /v1/educations
 GET /v1/metro_stations
 ```
 ## Getting Started
-
+* Clone code from repository
+* Go to folder what has code from repository in your computer.
+* Install all libs from package.json
+```
+npm install
+```
+* For working whith mongoDb you can use [Robo3t](https://robomongo.org/). Import all tables for DB from [Models](https://github.com/TimurAsayonok/GetInBackend/tree/master/models) folder. And run command
+```
+mongod
+```
+* Last stap, let's run server
+```
+npm start
+```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
