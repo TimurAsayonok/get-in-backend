@@ -57,7 +57,7 @@ GET /v1/metro_stations
 ```
 npm install
 ```
-* For working whith mongoDb you can use [Robo3t](https://robomongo.org/). Import all tables for DB from [Models](https://github.com/TimurAsayonok/GetInBackend/tree/master/models) folder. And run command
+* For working whith mongoDb you can use [Robo3t](https://robomongo.org/). Import all tables for DB from [models](https://github.com/TimurAsayonok/GetInBackend/tree/master/models) folder. And run command
 ```
 mongod
 ```
@@ -67,4 +67,4 @@ npm start
 ```
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TimurAsayonok/GetInBackend/blob/master/LICENSE) file for details
