@@ -50,7 +50,7 @@ GET /v1/educations
 ```
 GET /v1/metro_stations
 ```
-## Getting Started
+## Getting Started :rocket:
 * Clone code from repository
 * Go to folder what has code from repository in your computer.
 * Install all libs from package.json
@@ -65,6 +65,6 @@ mongod
 ```
 npm start
 ```
-## License
+## License :page_facing_up:
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TimurAsayonok/GetInBackend/blob/master/LICENSE) file for details
