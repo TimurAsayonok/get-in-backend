@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
-import metroStation from '../models/metroStation';
+import MetroStation from '../models/metrostation';
 
 export const getMetroStations = (req, res, next) => {
   // Find all areas and return json response
 
-  metroStation.find().lean().exec((err, metroStations) => res.json(
+  MetroStation.find().lean().exec((err, metrostations) => res.json(
     {
-      metroStations
+      payload: metrostations
     }
   ));
 }

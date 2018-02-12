@@ -6,7 +6,7 @@ export const getAreas = (req, res, next) => {
 
    area.find().lean().exec((err, areas) => res.json(
      {
-       areas: areas
+       payload: areas
      }
    ));
 }

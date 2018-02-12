@@ -6,7 +6,7 @@ export const getEducations = (req, res, next) => {
 
   education.find().lean().exec((err, educations) => res.json(
     {
-      educations: educations
+      payload: educations
     }
   ));
 }
