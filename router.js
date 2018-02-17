@@ -12,7 +12,8 @@ import {
   remindPassword,
   singUpUser,
   addChosenOffer,
-  removeChosenOffer
+  removeChosenOffer,
+  getUserChats
 } from './controllers/users';
 
 const router = Router();
@@ -51,5 +52,8 @@ router.route('/user/:user_id/chosen_offers')
 router.route('/user/:user_id/chosen_offer/')
   .put(addChosenOffer)
   .delete(removeChosenOffer);
+
+router.route('/user/:user_id/chats')
+  .get(getUserChats);
 
 export default router;

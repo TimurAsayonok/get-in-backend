@@ -1,5 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import { offerSchema } from './offer';
+import { chatSchema } from './chat';
 
 const userSchema = new Schema({
   email: String,

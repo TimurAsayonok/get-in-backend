@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import User from '../models/user';
 import Offer from '../models/offer';
+import Chat from '../models/chat';
 
 // Find all areas and return json response
 export const getUsers = (req, res, next) => {
@@ -177,4 +178,15 @@ export const removeChosenOffer = (req, res, next) => {
       return res.status(200).json({ status: 200, offerId });
     });
   })
+}
+
+export const getUserChats = (req, res, next) => {
+  const userId = req.params.user_id;
+
+  Chat.find({ "receiverId": userId }).lean().exec((err, chats) => {
+    if (err) {
+      return res.status(500).json({ status: 500, message: "Remove offer. Something went wrong" });
+    }
+    return res.status(200).json({ status: 200, payload: chats });
+  });
 }
