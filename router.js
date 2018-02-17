@@ -45,11 +45,11 @@ router.route('/remind_password')
 router.route('/singup')
   .post(singUpUser);
 
-router.route('/user/:user_id/favorite_offers')
-  .get(getFavoriteOffers);
+router.route('/user/:user_id/chosen_offers')
+  .get(getChosenOffers);
 
-router.route('/user/:user_id/add_favorite_offer/')
-  .put(addFavoriteOffer)
-  .delete(removeFavoriteOffer);
+router.route('/user/:user_id/chosen_offer/')
+  .put(addChosenOffer)
+  .delete(removeChosenOffer);
 
 export default router;

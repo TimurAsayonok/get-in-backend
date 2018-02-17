@@ -102,7 +102,7 @@ export const singUpUser = (req, res, next) => {
 }
 
 /** Get all user's favorite offers by userId */
-export const getFavoriteOffers = (req, res, next) => {
+export const getChosenOffers = (req, res, next) => {
   const userId = req.params.user_id;
 
   User.findById(userId, (err, user) => {
@@ -119,7 +119,7 @@ export const getFavoriteOffers = (req, res, next) => {
 }
 
 /** Add new favorite offer for user by offerId */
-export const addFavoriteOffer = (req, res, next) => {
+export const addChosenOffer = (req, res, next) => {
   const userId = req.params.user_id;
   const offerId = req.body.offerId;
 
@@ -153,7 +153,7 @@ export const addFavoriteOffer = (req, res, next) => {
 }
 
 /** Remove user's favorite offer by offerId */
-export const removeFavoriteOffer = (req, res, next) => {
+export const removeChosenOffer = (req, res, next) => {
   const userId = req.params.user_id;
   const offerId = req.body.offerId;
 
