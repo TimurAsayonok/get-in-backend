@@ -28,6 +28,11 @@ PUT/DELETE /v1/user/:user_id/chosen_offer/
 ```
 GET /v1/user/:user_id
 ```
+* getting user chats by user Id
+```
+GET /v1/user/:user_id/chats
+```
+
 **For offers:**
 * search offers on the given parameters
 ```
