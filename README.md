@@ -16,13 +16,13 @@ POST /v1/singup
 ```
 POST /v1/remind_password
 ```
-* get user's favorite offers by user Id
+* get user's chosen offers by user Id
 ```
-GET /v1/:user_id/favorite_offers
+GET /v1/:user_id/chosen_offers
 ```
-* adding / removing favorite offers in the list by user Id
+* adding / deleting chosen offers in the list by user Id
 ```
-PUT/DELETE /v1/user/:user_id/add_favorite_offer/
+PUT/DELETE /v1/user/:user_id/chosen_offer/
 ```
 * receiving user data by user Id
 ```
