@@ -8,11 +8,11 @@ import { getOffers, findOffers } from './controllers/offers';
 import {
   getUsers,
   loginUser,
-  getFavoriteOffers,
+  getChosenOffers,
   remindPassword,
   singUpUser,
-  addFavoriteOffer,
-  removeFavoriteOffer
+  addChosenOffer,
+  removeChosenOffer
 } from './controllers/users';
 
 const router = Router();
