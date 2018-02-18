@@ -33,7 +33,7 @@ export const loginUser = (req, res, next) => {
 
 /** Remind Password Method. Will send user password for app into email account */
 export const remindPassword = (req, res, next) => {
-  const userEmail = req.body.user_email;
+  const userEmail = req.body.email;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
