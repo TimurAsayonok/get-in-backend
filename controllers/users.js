@@ -82,7 +82,7 @@ export const singUpUser = (req, res, next) => {
     }
 
     if (user) {
-      return res.status(404).json({ status: 403, message: "User has been already created" });
+      return res.status(403).json({ status: 403, message: "User has been already created" });
     } else {
       const newUser = new User();
       
@@ -91,12 +91,12 @@ export const singUpUser = (req, res, next) => {
       newUser.first_name = firstName;
       newUser.last_name = lastName;
 
-      newUser.save((err, user) => {
+      newUser.save((err, userSignUp) => {
         if (err) {
           return res.status(500).json({ status: 500, message: "Create new user. Something went wrong" });
         }
 
-        return res.status(200).json({ status: 200, payload: user });
+        return res.status(200).json({ status: 200, payload: userSignUp });
       });
     }
   });
