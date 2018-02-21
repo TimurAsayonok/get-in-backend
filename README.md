@@ -1,6 +1,6 @@
-# GetInBackend :computer:
+# Get In backend :computer:
 
-GetInBackend is the server part for the mobile application [GetIn](https://github.com/TimurAsayonok/GetInMobileApp) - GetIn.
+Get In backend is the server part for the mobile application [Get In](https://github.com/TimurAsayonok/get-in-mobile-app) - GetIn.
 At the moment, the basic methods are implemented.
 
 **For the user**:
@@ -62,7 +62,7 @@ GET /v1/metro_stations
 ```
 npm install
 ```
-* For working whith mongoDb you can use [Robo3t](https://robomongo.org/). Import all tables for DB from [models](https://github.com/TimurAsayonok/GetInBackend/tree/master/models) folder. And run command
+* For working whith mongoDb you can use [Robo3t](https://robomongo.org/). Import all tables for DB from [models](https://github.com/TimurAsayonok/get-in-backend/tree/master/models) folder. And run command
 ```
 mongod
 ```
@@ -72,4 +72,4 @@ npm start
 ```
 ## License :page_facing_up:
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TimurAsayonok/GetInBackend/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TimurAsayonok/get-in-backend/blob/master/LICENSE) file for details
