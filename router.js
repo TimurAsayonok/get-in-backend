@@ -24,8 +24,8 @@ router.route('/areas')
 router.route('/educations')
   .get(getEducations);
 
-router.route('/metro_stations')
-  .get(getMetroStations);
+// router.route('/metro_stations')
+//   .get(getMetroStations);
 
 /** offer's methods */
 router.route('/offers')
