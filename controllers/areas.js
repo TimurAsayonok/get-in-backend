@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import area from 'models/area';
+import area from '../models/area';
 
 export const getAreas = (req, res, next) => {
    // Find all areas and return json response
