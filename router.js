@@ -3,7 +3,7 @@ import express, { Router } from 'express';
 // Import actions from areas controller
 import { getAreas } from './controllers/areas';
 import { getEducations } from './controllers/educations';
-import { getMetroStations } from './controllers/metroStations';
+// import { getMetroStations } from './controllers/metroStations';
 import { getOffers, findOffers } from './controllers/offers';
 import {
   getUsers,
