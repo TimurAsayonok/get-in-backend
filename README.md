@@ -1,6 +1,7 @@
 # Get In backend :computer:
 
 Get In backend is the server part for the mobile application [Get In](https://github.com/TimurAsayonok/get-in-mobile-app) - GetIn.
+:heavy_exclamation_mark: It is important. All user data are test data, and do not carry any useful information
 At the moment, the basic methods are implemented.
 
 **For the user**:
