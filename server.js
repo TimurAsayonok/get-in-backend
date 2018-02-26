@@ -9,6 +9,7 @@ mongoose.connect('mongodb://localhost/getIn');
 
 // Initialize http server
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Logger that outputs all requests into the console
 app.use(morgan('combined'));
@@ -23,7 +24,7 @@ app.get('/', (request, response) => {
   response.send('/ rout, Hello Word');
 });
 
-const server = app.listen(3000, () => {
+const server = app.listen(PORT, () => {
   const { address, port } = server.address();
   console.log(`Listening at http://${address}:${port}`);
 });
