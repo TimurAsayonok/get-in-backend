@@ -5,7 +5,7 @@ import router from './router';
 import bodyParser from 'body-parser';
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/getIn');
+mongoose.connect(process.env.PROD_MONGODB);
 
 // Initialize http server
 const app = express();
