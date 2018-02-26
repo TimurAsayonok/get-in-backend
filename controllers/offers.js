@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Offer from '../models/offer';
+import Offer from 'models/offer';
 import _ from 'lodash';
 
 export const getOffers = (req, res, next) => {
