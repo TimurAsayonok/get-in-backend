@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 import nodemailer from 'nodemailer'
 import _ from 'lodash';
 
-import User from 'models/user';
-import Offer from 'models/offer';
-import Chat from 'models/chat';
+import User from '../models/user';
+import Offer from '../models/offer';
+import Chat from '../models/chat';
 
 // Find all areas and return json response
 export const getUsers = (req, res, next) => {
