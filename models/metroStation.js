@@ -8,4 +8,4 @@ const metroStationSchema = new Schema({
   }
 });
 
-export default mongoose.model('metrostation', metroStationSchema);
+export default mongoose.model('metroStation', metroStationSchema);
