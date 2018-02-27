@@ -166,9 +166,9 @@ export const removeChosenOffer = (req, res, next) => {
     if (!user) {
       return res.status(404).json({ status: 404, message: "User not found" });
     }
-
-    const newOffers = _.remove(user.favorite_offers, (offer) => offer._is === offerId);
-
+    //delete offer if offer._is === offerId
+    const newOffers = _.remove(user.favorite_offers, (offer) => offer._id === offerId);
+    //update user method
     user.favorite_offers = newOffers;
 
     user.save((err, user) => {
@@ -185,7 +185,7 @@ export const getUserChats = (req, res, next) => {
 
   Chat.find({ "receiverId": userId }).lean().exec((err, chats) => {
     if (err) {
-      return res.status(500).json({ status: 500, message: "Remove offer. Something went wrong" });
+      return res.status(500).json({ status: 500, message: "Get chats. Something went wrong" });
     }
     return res.status(200).json({ status: 200, payload: chats });
   });
